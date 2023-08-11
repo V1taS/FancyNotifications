@@ -13,13 +13,11 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      working-directory: Example/
 
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
         python-version: 3.x
-      working-directory: Example/
 
     - name: Set up Python dependencies
       run: |
@@ -27,25 +25,10 @@ jobs:
         pip install python-telegram-bot
       working-directory: Example/
 
-    - name: Set up Tuist
-      run: curl -Ls https://install.tuist.io | bash
-      working-directory: Example/
-
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7
-      working-directory: Example/
-
-    - name: Set up fastlane
-      run: |
-        gem install bundler
-        bundle install --jobs 4 --retry 3
-      working-directory: Example/
-
-    - name: Tuist fetch
-      run: tuist fetch
-      working-directory: Example/
 
     - name: Download App versions from SosinVitalii.com server
       run: |
@@ -63,14 +46,6 @@ jobs:
     - name: Upload App versions to SosinVitalii.com server
       run: |
         curl --ssl-reqd --insecure --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }} -T "./versions.json" "ftp://${{ secrets.FTP_SERVER }}/fancy_notifications_versions.json"
-      working-directory: Example/
-
-    - name: Tuist generate
-      run: tuist generate
-      working-directory: Example/
-
-    - name: Build the app
-      run: bundle exec fastlane build
       working-directory: Example/
 
     - name: Get MARKETING_VERSION and CURRENT_PROJECT_VERSION
