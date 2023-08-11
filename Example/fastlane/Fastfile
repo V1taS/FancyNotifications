@@ -6,7 +6,7 @@ platform :ios do
   lane :build do
     build_ios_app(
       workspace: "Example.xcworkspace",
-      scheme: "Random"
+      scheme: "Example"
     )
   end
 end
