@@ -45,7 +45,7 @@ jobs:
 
     - name: Upload App versions to SosinVitalii.com server
       run: |
-        curl --ssl-reqd --insecure --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }} -T "./versions.json" "ftp://${{ secrets.FTP_SERVER }}/fancy_notifications_versions.json"
+        curl --ssl-reqd --insecure --user ${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }} -T "./fancy_notifications_versions.json" "ftp://${{ secrets.FTP_SERVER }}/fancy_notifications_versions.json"
       working-directory: Example/
 
     - name: Get MARKETING_VERSION and CURRENT_PROJECT_VERSION
