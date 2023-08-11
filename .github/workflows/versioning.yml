@@ -60,9 +60,7 @@ jobs:
         git config --global user.name "GitHub Actions Bot"
         git checkout ${GITHUB_HEAD_REF}
         git tag "${{ env.MARKETING_VERSION }}"
-        git push --tags
-      env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+        git push https://x-access-token:${{ secrets.TOKEN_GITHUB }}@github.com/V1taS/FancyNotifications.git --tags
 
     - name: Send Telegram notification "New Release for Fancy Notifications"
       env:
