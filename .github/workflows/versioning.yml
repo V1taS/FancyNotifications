@@ -13,13 +13,11 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      working-directory: Example/
 
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
         python-version: 3.x
-      working-directory: Example/
 
     - name: Set up Python dependencies
       run: |
@@ -35,7 +33,6 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7
-      working-directory: Example/
 
     - name: Set up fastlane
       run: |
