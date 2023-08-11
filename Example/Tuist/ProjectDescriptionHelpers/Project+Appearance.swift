@@ -8,6 +8,7 @@ public let marketingVersion = "1.0"
 public let currentProjectVersion = "1"
 
 /// App
+public let developmentTeam = "34VDSPZYU9"
 public let organizationName = "SosinVitalii.com"
 public let reverseOrganizationName = "com.sosinvitalii"
 public let appName = "Example"

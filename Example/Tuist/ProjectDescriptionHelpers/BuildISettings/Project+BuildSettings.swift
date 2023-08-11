@@ -125,6 +125,8 @@ public let targetBuildIOSSettings: Settings = .settings(
     "IPHONEOS_DEPLOYMENT_TARGET": "13.0",
     "MTL_FAST_MATH": "YES",
     "SDKROOT": "iphoneos",
+    "DEVELOPMENT_TEAM": "\(developmentTeam)",
+    "CODE_SIGN_STYLE": "Automatic",
     "TARGETED_DEVICE_FAMILY": "1,2",
     "ENABLE_TARGET_PARALLELIZATION": "YES"
   ],
