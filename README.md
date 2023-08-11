@@ -7,13 +7,9 @@
 
 ### Start Example
 
-Open Example
-```
-cd Example
-```
-
 Generate and run project
 ```
+cd Example
 bash setup_project.sh
 ```
 
