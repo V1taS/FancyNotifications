@@ -6,7 +6,10 @@ platform :ios do
   lane :build do
     build_ios_app(
       workspace: "Example.xcworkspace",
-      scheme: "Example"
+      scheme: "Example",
+      export_method: 'ad-hoc',
+      skip_package_ipa: true,
+      export_xcargs: "-allowProvisioningUpdates -exportProvisioningProfile 'AD_HOC_PROFILE_NAME' -exportSigningIdentity 'iPhone Distribution'"
     )
-  end
+  end  
 end
